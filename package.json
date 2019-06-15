@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "build": "NODE_ENV=production  CDN_PATH=\"https://john-kevin.me/static\" && rollup -c rollup.server-config.js",
+    "build": "NODE_ENV=production  CDN_PATH=\"https://john-kevin.me/static\" yarn build:client && yarn build:server ",
     "start": "NODE_ENV=development CDN_PATH=\"\" concurrently \"npm:build:server:watch\" \"npm:build:client:watch\" \"nodemon dist/server.js\"",
     "build:server": "rollup -c rollup.server-config.js",
     "build:client": "rollup -c",

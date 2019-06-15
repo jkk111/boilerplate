@@ -11,6 +11,7 @@ export default {
     name: "test"
   },
   external: [
+    "express",
     "stream",
     "crypto",
     "string_decoder",
