@@ -1,0 +1,34 @@
+{
+  "name": "boilerplate",
+  "version": "0.0.1",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "NODE_ENV=production  CDN_PATH=\"https://john-kevin.me/static\" && rollup -c rollup.server-config.js",
+    "start": "NODE_ENV=development CDN_PATH=\"\" concurrently \"npm:build:server:watch\" \"npm:build:client:watch\" \"nodemon dist/server.js\"",
+    "build:server": "rollup -c rollup.server-config.js",
+    "build:client": "rollup -c",
+    "build:server:watch": "rollup -c rollup.server-config.js -w",
+    "build:client:watch": "rollup -c -w"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.5",
+    "@babel/preset-env": "^7.4.5",
+    "@babel/preset-react": "^7.0.0",
+    "concurrently": "^4.1.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "rollup": "^1.15.5",
+    "rollup-plugin-babel": "^4.3.2",
+    "rollup-plugin-commonjs": "^10.0.0",
+    "rollup-plugin-json": "^4.0.0",
+    "rollup-plugin-node-builtins": "^2.1.2",
+    "rollup-plugin-node-globals": "^1.4.0",
+    "rollup-plugin-node-resolve": "^5.0.2",
+    "rollup-plugin-replace": "^2.2.0",
+    "serve": "^11.0.1"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
